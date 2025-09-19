@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 
 class CircularMenuItem extends StatelessWidget {
   /// if icon and animatedIcon are passed, icon will be ignored
-  final IconData? icon;
+  final Widget? item;
   final Color? color;
-  final Color? iconColor;
   final VoidCallback onTap;
-  final double iconSize;
+  final double itemSize;
   final double padding;
   final double margin;
   final List<BoxShadow>? boxShadow;
@@ -29,11 +28,10 @@ class CircularMenuItem extends StatelessWidget {
   /// [padding] and [margin]  must be equal or greater than zero.
   CircularMenuItem({
     required this.onTap,
-    this.icon,
+    this.item,
     this.color,
-    this.iconSize = 30,
+    this.itemSize = 30,
     this.boxShadow,
-    this.iconColor,
     this.animatedIcon,
     this.padding = 10,
     this.margin = 10,
@@ -71,10 +69,10 @@ class CircularMenuItem extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.all(padding),
               child: animatedIcon == null
-                  ? Icon(
-                      icon,
-                      size: iconSize,
-                      color: iconColor ?? Colors.white,
+                  ? SizedBox(
+                      height: itemSize,
+                      width: itemSize,
+                      child: item,
                     )
                   : animatedIcon,
             ),

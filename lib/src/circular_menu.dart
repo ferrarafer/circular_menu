@@ -225,7 +225,7 @@ class CircularMenuState extends State<CircularMenu>
       child: Align(
         alignment: widget.alignment,
         child: CircularMenuItem(
-          icon: null,
+          item: null,
           margin: widget.toggleButtonMargin,
           color: widget.toggleButtonColor ?? Theme.of(context).primaryColor,
           padding: (-_animation.value * widget.toggleButtonPadding * 0.5) +
